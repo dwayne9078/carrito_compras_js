@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito De Compras JS</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <nav>
+            <h1>PC-SHOP ONLINE</h1>
+            <div class="opciones">
+                <a href="#">Productos</a>
+                <a href="#">Promociones</a>
+                <a href="#">Sobre Nosotros</a>
+            </div>
+            <label for="chkbox">
+                <img src="./img/carrito.svg" alt="">
+            </label>
+        </nav>
+        <input type="checkbox" id="chkbox">
+        <div class="bar">
+            <h1>Conoce Nuestros Nuevos Productos</h1>
+            <p>Ver Más</p>
+        </div>
+
+        <div class="articulos">
+
+            <div class="card-grp">
+                <div class="card">
+                    <h4 class="titulo_producto">Monitor 4k</h4>
+                    <div class="container-img">
+                        <img src="./img/monitor.png" alt="">
+                    </div>
+                    <span class="precios">799.99</span>
+                    <input type="button" value="Agregar al Carrito" onclick="agregarProducto('monitor')">
+                </div>
+                <div class="card">
+                    <h4 class="titulo_producto">Teclado Gamer</h4>
+                    <div class="container-img">
+                        <img src="./img/teclado.png" alt="">
+                    </div>
+                    <span class="precios">1599.99</span>
+                    <input type="button" value="Agregar al Carrito" onclick="agregarProducto('teclado')">
+                </div>
+                <div class="card">
+                    <h4 class="titulo_producto">PC de Escritorio</h4>
+                    <div class="container-img">
+                        <img src="./img/desktop.png" alt="">
+                    </div>
+                    <span class="precios">3500.00</span>
+                    <input type="button" value="Agregar al Carrito" onclick="agregarProducto('desktop')">
+                </div>
+                <div class="card">
+                    <h4 class="titulo_producto">Mochila para Laptop</h4>
+                    <div class="container-img">
+                        <img src="./img/mochila.png" alt="">
+                    </div>
+                    <span class="precios">599.99</span>
+                    <input type="button" value="Agregar al Carrito" onclick="agregarProducto('mochila')">
+                </div>
+                <div class="card">
+                    <h4 class="titulo_producto">Mouse Inalambrico</h4>
+                    <div class="container-img">
+                        <img src="./img/mouse.png" alt="">
+                    </div>
+                    <span class="precios">874.99</span>
+                    <input type="button" value="Agregar al Carrito" onclick="agregarProducto('mouse')">
+                </div>
+                <div class="card">
+                    <h4 class="titulo_producto">SSD 500GB</h4>
+                    <div class="container-img">
+                        <img src="./img/ssd.png" alt="">
+                    </div>
+                    <span class="precios">650.00</span>
+                    <input type="button" value="Agregar al Carrito" onclick="agregarProducto('ssd')">
+                </div>
+
+            </div>
+        
+        </div>
+        <div class="carrito">
+            <h3>Carrito de Compras</h3>
+            <!-- <span>Carrito Vacío</span> -->
+            <!-- <div>
+                <h4>Monitor 4k</h4>
+                <img src="./img/monitor.png" alt="">
+                <span>599.99</span>
+                <input type="number" id="inpt_cant" value="1">
+
+            </div> -->
+            <!-- <input type="button" value="Pagar" id="btn_pagar"> -->
+            <input type="button" value="Pagar" id="btn_pagar" onclick="pagarCarrito()">
+        <input type="button" value="Vaciar Carrito" id="btn_reset" onclick="vaciarCarrito()">
+        </div>
+    </div>
+</body>
+
+<script src="./js/main.js"></script>
+
+</html>

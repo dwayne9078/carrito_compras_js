@@ -1,0 +1,239 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 3rem;
+    grid-template-rows: 4rem 22rem 1fr;
+    overflow-x: hidden;
+    transition: all 250ms;
+    & .carrito span {
+        color: transparent;
+        white-space: nowrap;
+        display: none;
+    }
+    & .carrito h4 {
+        display: none;
+    }
+}
+
+nav {
+    background-color: #1b1b1b;
+    color: white;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 2rem;
+    grid-template-rows: 1fr;
+    grid-row: 1/2;
+    grid-column: 1/5;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+nav h1 {
+    grid-column: 1/2;
+    margin-left: 1rem;
+}
+
+nav .opciones {
+    grid-column: 2/4;
+    margin-right: 1rem;
+}
+
+nav img {
+    width: 1.5rem;
+    filter: invert();
+}
+
+nav label {
+    grid-column: 4/5;
+    display: block;
+}
+
+nav label:hover {
+    cursor: pointer;
+}
+
+#chkbox {
+    display: none;
+}
+
+.opciones {
+    text-align: end;
+    grid-column: 2/3;
+}
+
+.opciones a {
+    color: white;
+    border-bottom: none;
+    margin-left: 1rem;
+}
+
+.opciones a:hover {
+    border-bottom: 1px solid;
+}
+
+.bar {
+    background-image: url(../img/img_barra.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    grid-column: 1/4;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.bar h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.bar p {
+    align-self: center;
+    text-align: center;
+    width: max-content;
+    background-color: #1b1b1b;
+    color: gray;
+    padding: 1rem;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0px 0px 10px 5px black;
+    transition: all 250ms ease-in-out;
+}
+
+.bar p:hover {
+    background-color: #131313;
+    color: white;
+}
+
+.articulos {
+    background-color: #1e1e1e;
+    grid-column: 1/4;
+    grid-row: 3/4;
+}
+
+.articulos .card-grp {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(6, 12rem);
+    gap: 1rem 1rem;
+    background-color: #242424;
+    border-radius: .5rem;
+    overflow-x: auto;
+}
+
+.articulos .card {
+    margin: 1rem;
+    /* height: 15rem; */
+    width: 12rem;
+    background-color: #323232;
+    color: white;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.articulos .card h4 {
+    margin-top: 1rem;
+}
+
+.articulos .card .container-img {
+    height: 9rem;
+}
+
+.articulos .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+.articulos .card span::before {
+    content: "$";
+}
+
+.carrito {
+    box-shadow: -2px 0px 10px 0px black;
+    background-color: #1b1b1b;
+    padding: .5rem;
+    color: white;
+    grid-row: 2/4;
+    grid-column: 4/5;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.carrito h3 {
+    white-space: nowrap;
+    color: transparent;
+}
+
+.carrito h4 {
+    text-align: center;
+    color: transparent;
+}
+
+.carrito img {
+    max-width: 100%;
+}
+
+.carrito div {
+    margin-top: .5rem;
+    background-color: #323232;
+    text-align: center;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.carrito input {
+    display: none;
+    margin: 1rem auto 1rem auto;
+    outline: none;
+}
+
+.carrito input[type=number] {
+    display: none;
+    width: 3ch;
+    margin: auto;
+    outline: none;
+}
+
+.carrito input[type=number]::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+.container:has(#chkbox:checked){
+    grid-template-columns: repeat(3, 1fr) 13rem;
+    & .carrito span {
+        color: white;
+        display: block;
+    }
+
+    & .carrito input, .carrito input[type=number] {
+        display: block;
+    }
+
+    & .carrito {
+        grid-column: 4/5;
+    }
+    & .carrito h3, .carrito h4 {
+        color: white;
+        display: block;
+    }
+}
